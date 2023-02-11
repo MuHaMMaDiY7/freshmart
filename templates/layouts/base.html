@@ -51,26 +51,26 @@
 
 
 
-			<!-- Newsletter Popup -->
-			<div class="newsletter-popup">
-				<div class="popup-wrap" id="newsletter-popup">
-					<div class="popup">
-						<a class="close" href="#"><i class="zmdi zmdi-hc-fw zmdi-close"></i></a>
-
-						<h3 class="block-title">Newsletter</h3>
-						<p class="block-description">Sign up for newsletter to receive special offers and exclusive news about FreshMart products</p>
-
-						<form action="#" method="post">
-							<input type="text" placeholder="Enter Your Email">
-							<button type="submit" class="btn btn-primary">Subscribe</button>
-						</form>
-
-						<div class="checkbox">
-							<label><input type="checkbox"> Don’t show this popup again</label>
-						</div>
-					</div>
-				</div>
-			</div>
+{#			<!-- Newsletter Popup -->#}
+{#			<div class="newsletter-popup">#}
+{#				<div class="popup-wrap" id="newsletter-popup">#}
+{#					<div class="popup">#}
+{#						<a class="close" href="#"><i class="zmdi zmdi-hc-fw zmdi-close"></i></a>#}
+{##}
+{#						<h3 class="block-title">Newsletter</h3>#}
+{#						<p class="block-description">Sign up for newsletter to receive special offers and exclusive news about FreshMart products</p>#}
+{##}
+{#						<form action="#" method="post">#}
+{#							<input type="text" placeholder="Enter Your Email">#}
+{#							<button type="submit" class="btn btn-primary">Subscribe</button>#}
+{#						</form>#}
+{##}
+{#						<div class="checkbox">#}
+{#							<label><input type="checkbox"> Don’t show this popup again</label>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
 
 			<!-- Go Up button -->
 			<div class="go-up">
@@ -109,3 +109,30 @@
 
 
 </html>
+
+{#				<div class="container">#}
+{#					<div class="blog-list full-width">#}
+{#						<div class="posts-list">#}
+{#							<div class="row">#}
+{#                                {% for blog in object_list %}#}
+{#								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">#}
+{#									<div class="post-item">#}
+{#										<div class="post-image">#}
+{#											<a href="{% url 'blogs:detail' pk=blog.pk %}">#}
+{#												<img class="img-responsive" src="{{ blog.banner_image.url }}" alt="Blog Image">#}
+{#											</a>#}
+{#										</div>#}
+{#										<a class="post-title" href="{% url 'blogs:detail' pk=blog.pk %}">{{ blog.title }}</a>#}
+{#										<div class="post-info">#}
+{#											<span class="comment item"><i class="zmdi zmdi-comments"></i>2 Comments</span>#}
+{#											<span class="date item"><i class="zmdi zmdi-calendar-note"></i>{{ blog.created_at|date:"D F Y" }}</span>#}
+{#										</div>#}
+{#										<div class="post-description">{{ blog.body }}#}
+{#											<span class="post-readmore"><a href="{% url 'blogs:detail' pk=blog.pk %}">view more</a></span>#}
+{#										</div>#}
+{#									</div>#}
+{#								</div>#}
+{#                                {% endfor %}#}
+{#							</div>#}
+{#						</div>#}
+{##}

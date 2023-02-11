@@ -1,0 +1,70 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Main Content -->
+    <div id="content" class="site-content">
+        <!-- Breadcrumb -->
+        <div id="breadcrumb">
+            <div class="container">
+                <h2 class="title">Our Blog</h2>
+
+                <ul class="breadcrumb">
+                    <li><a href="#" title="Home">Home</a></li>
+                    <li><span>Our Blog</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="blog-list full-width">
+                <div class="posts-list">
+                    <div class="row">
+                        {% for blog in object_list %}
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="post-item">
+                                    <div class="post-image">
+                                        <a href="{% url 'blogs:detail' pk=blog.pk %}">
+                                            <img class="img-responsive" src="{{ blog.banner_image.url }}"
+                                                 alt="Blog Image">
+                                        </a>
+                                    </div>
+                                    <a class="post-title"
+                                       href="{% url 'blogs:detail' pk=blog.pk %}">{{ blog.title }}</a>
+                                    <div class="post-info">
+                                        <span class="comment item"><i class="zmdi zmdi-comments"></i>2 Comments</span>
+                                        <span class="date item"><i
+                                                class="zmdi zmdi-calendar-note"></i>{{ blog.created_at|date:"D F Y" }}</span>
+                                    </div>
+                                    <div class="post-description">{{ blog.body }}
+                                        <span class="post-readmore"><a href="{% url 'blogs:detail' pk=blog.pk %}">view more</a></span>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+                <!-- Pagination Bar -->
+                <div class="pagination-bar">
+                    <div class="pagination">
+                        <ul class="page-list">
+                            {% for page in page_obj.paginator.page_range %}
+                                <li><a href="#" class="{% if page == page_obj.number %}active{% endif %}{% if page <= page_obj.number%}previous{% endif %}"></a>Previous
+                                </li>
+{#                                {% if users.has_previous %}#}
+{#                                <li><a href="?page={{ users.previous_page_number }}">&laquo;</a></li>#}
+{#                                {% endif %}#}
+
+                                {#									<li><a href="#" class="prev">Previous</a></li>#}
+                                {#									<li><a href="#" class="current">1</a></li>#}
+                                {#									<li><a href="#">2</a></li>#}
+                                {#									<li><a href="#" class="next">Next</a></li>#}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
