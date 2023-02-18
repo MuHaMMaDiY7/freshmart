@@ -15,7 +15,8 @@
 							<div class="col-md-7 col-sm-7 col-xs-12">
 								<div class="topbar-left d-flex">
 									<div class="email">
-										<i class="fa fa-envelope" aria-hidden="true"></i>Email: tivatheme@gmail.com
+                                        <a href="mailto:pubgclashov@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>Email:pubgclashov@gmail.com</a>
+
 									</div>
 									<div class="skype">
 										<i class="fa fa-skype" aria-hidden="true"></i>Skype: tivatheme
@@ -97,8 +98,8 @@
 							<!-- Search -->
 							<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 								<div class="form-search">
-									<form action="#" method="get">
-										<input type="text" class="form-input" placeholder="Search">
+									<form action="{% url 'products:all' %}" method="get">
+										<input type="text" class="form-input" placeholder="Search" name="q" value="{{ request.GET.q }}">
 										<button type="submit" class="fa fa-search"></button>
 									</form>
 								</div>
@@ -205,7 +206,7 @@
 						</li>
 
 						<li class="dropdown">
-							<a href="product-grid-left-sidebar.html" title="Product">Product</a>
+							<a href="{% url 'products:all' %}" title="Product">Product</a>
 							<div class="dropdown-menu">
 								<ul>
 									<li class="has-image">
