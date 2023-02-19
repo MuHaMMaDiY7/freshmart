@@ -1,6 +1,8 @@
 {% extends 'layouts/base.html' %}
+{% load my_tags %}
 {% load static %}
 {% block content %}
+
     <!-- Main Menu -->
     <div id="main-menu">
         <ul class="menu">
@@ -179,7 +181,7 @@
                                     <div id="slider-range" class="tiva-filter">
                                         <div class="filter-item price-filter">
                                             <div class="layout-slider">
-                                                <input id="price-filter" name="price" value="0;100"/>
+                                                    <input type="text" class="js-range-slider" name="my_range" value="" />
                                             </div>
                                             <div class="layout-slider-settings"></div>
                                         </div>
@@ -194,31 +196,15 @@
                                     <div class="filter-color">
                                         <div class="left">
                                             {% for color in colors %}
-                                                <a href="#" onclick="addSearchParams('color', {{ colors.id }})">
                                                 <div class="item">
-                                                    <label style="background-color: {{ color.code }}"></label>
-                                                    <span class="color-label">{{ color.id }}</span>
-
+                                                    <a href="#" onclick="addSearchParams('color', {{ color.id }})">
+                                                        <label class="color color-1"
+                                                               style="background-color: {{ color.code }}"></label>
+                                                        <span class="color-label">{{ color.name }}</span>
+                                                        <span>({{ color.products.count }})</span>
+                                                    </a>
                                                 </div>
-                                                </a>
                                             {% endfor %}
-                                        </div>
-                                        <div class="right">
-                                            <div class="item">
-                                                <label class="color color-2"></label>
-                                                <span class="color-label">Green</span>
-                                                <span>(1)</span>
-                                            </div>
-                                            <div class="item">
-                                                <label class="color color-4"></label>
-                                                <span class="color-label">Brown</span>
-                                                <span>(3)</span>
-                                            </div>
-                                            <div class="item">
-                                                <label class="color color-6"></label>
-                                                <span class="color-label">Red</span>
-                                                <span>(10)</span>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -267,25 +253,10 @@
                                     <div class="filter-bar">
                                         <form action="#" class="pull-right">
                                             <div class="select">
-                                                <select class="form-control">
-                                                    <option value="">Sort By</option>
-                                                    <option value="1">Price: Lowest first</option>
-                                                    <option value="2">Price: Highest first</option>
-                                                    <option value="3">Product Name: A to Z</option>
-                                                    <option value="4">Product Name: Z to A</option>
-                                                    <option value="5">In stock</option>
-                                                </select>
-                                            </div>
-                                        </form>
-                                        <form action="#" class="pull-right">
-                                            <div class="select">
-                                                <select class="form-control">
-                                                    <option value="">Relevance</option>
-                                                    <option value="1">Price: Lowest first</option>
-                                                    <option value="2">Price: Highest first</option>
-                                                    <option value="3">Product Name: A to Z</option>
-                                                    <option value="4">Product Name: Z to A</option>
-                                                    <option value="5">In stock</option>
+                                                <select class="form-control" onchange="addSearchParams('sort', this.value)">
+                                                    <option value="price">Sort By</option>
+                                                    <option {% if request.GET.sort == 'real_price' %}selected{% endif %} value="real_price">Price: Lowest first</option>
+                                                    <option {% if request.GET.sort == '-real_price' %}selected{% endif %} value="-real_price">Price: Highest first</option>
                                                 </select>
                                             </div>
                                         </form>
@@ -460,5 +431,21 @@
             }
             window.location.search = searchParams.toString()
         }
+
+
+
+    $(".js-range-slider").ionRangeSlider({
+        type: "double",
+        grid: true,
+        min: {{ min }},
+        max: {{ max }},
+        from: {% get_current_price request 0 %},
+        to: {% get_current_price request 1 %},
+        prefix: "$",
+        onFinish(data){
+            addSearchParams('price', data.from.toString() + ';' + data.to.toString())
+        }
+    });
+
     </script>
 {% endblock %}

@@ -15,9 +15,9 @@ class ProductModelAdmin(admin.ModelAdmin):
 
 @admin.register(ProductColorModel)
 class ProductColorModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'code', 'get_code']
-    list_display_links = ['id', 'code', 'get_code']
-    search_fields = ['code']
+    list_display = ['id', 'code', 'get_code', 'name']
+    list_display_links = ['id', 'code', 'get_code', 'name']
+    search_fields = ['code', 'name']
     form = ColorForm
 
     def get_code(self, obj):

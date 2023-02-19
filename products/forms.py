@@ -9,4 +9,4 @@ class ColorForm(forms.ModelForm):
 
     class Meta:
         model = ProductColorModel
-        fields = ['code']
+        fields = ['code', 'name']

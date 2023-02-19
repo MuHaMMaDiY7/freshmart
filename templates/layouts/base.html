@@ -4,111 +4,115 @@
 
 
 <head>
-		<!-- Basic Page Needs -->
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>FreshMart - Organic, Fresh Food, Farm Store HTML Template</title>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FreshMart - Organic, Fresh Food, Farm Store HTML Template</title>
 
-		<meta name="keywords" content="Organic, Fresh Food, Farm Store">
-		<meta name="description" content="FreshMart - Organic, Fresh Food, Farm Store HTML Template">
-		<meta name="author" content="tivatheme">
+    <meta name="keywords" content="Organic, Fresh Food, Farm Store">
+    <meta name="description" content="FreshMart - Organic, Fresh Food, Farm Store HTML Template">
+    <meta name="author" content="tivatheme">
 
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="{% static 'main/img/favicon.png'%}" type="image/png">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'main/img/favicon.png' %}" type="image/png">
 
-		<!-- Mobile Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<!-- Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Playfair+Display:300,400,700" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:300,400,700" rel="stylesheet">
 
-		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="{% static 'main/libs/bootstrap/css/bootstrap.css'%}">
-		<link rel="stylesheet" href="{% static 'main/libs/font-awesome/css/font-awesome.min.css'%}">
-		<link rel="stylesheet" href="{% static 'main/libs/font-material/css/material-design-iconic-font.min.css'%}">
-		<link rel="stylesheet" href="{% static 'main/libs/nivo-slider/css/nivo-slider.css'%}">
-		<link rel="stylesheet" href="{% static 'main/libs/nivo-slider/css/animate.css'%}">
-		<link rel="stylesheet" href="{% static 'main/libs/nivo-slider/css/style.css'%}">
-		<link rel="stylesheet" href="{% static 'main/libs/owl.carousel/assets/owl.carousel.min.css'%}">
-		<link rel="stylesheet" href="{% static 'main/libs/slider-range/css/jslider.css'%}">
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="{% static 'main/libs/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'main/libs/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/libs/font-material/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/libs/nivo-slider/css/nivo-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'main/libs/nivo-slider/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'main/libs/nivo-slider/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/libs/owl.carousel/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/libs/slider-range/css/jslider.css' %}">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css"/>
 
-		<!-- Template CSS -->
-		<link rel="stylesheet" href="{% static 'main/css/style.css'  %}">
-		<link rel="stylesheet" href="{% static 'main/css/reponsive.css' %}">
-	</head>
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/reponsive.css' %}">
+</head>
 
-	<body class="home home-1">
-		<div id="all">
+<body class="home home-1">
+<div id="all">
 
-{% include 'layouts/navbar.html' %}
+    {% include 'layouts/navbar.html' %}
 
-{% block content %}
+    {% block content %}
+
+    {% endblock %}
+
+    {% include 'layouts/footer.html' %}
+
+
+    {#			<!-- Newsletter Popup -->#}
+    {#			<div class="newsletter-popup">#}
+    {#				<div class="popup-wrap" id="newsletter-popup">#}
+    {#					<div class="popup">#}
+    {#						<a class="close" href="#"><i class="zmdi zmdi-hc-fw zmdi-close"></i></a>#}
+    {##}
+    {#						<h3 class="block-title">Newsletter</h3>#}
+    {#						<p class="block-description">Sign up for newsletter to receive special offers and exclusive news about FreshMart products</p>#}
+    {##}
+    {#						<form action="#" method="post">#}
+    {#							<input type="text" placeholder="Enter Your Email">#}
+    {#							<button type="submit" class="btn btn-primary">Subscribe</button>#}
+    {#						</form>#}
+    {##}
+    {#						<div class="checkbox">#}
+    {#							<label><input type="checkbox"> Don’t show this popup again</label>#}
+    {#						</div>#}
+    {#					</div>#}
+    {#				</div>#}
+    {#			</div>#}
+
+    <!-- Go Up button -->
+    <div class="go-up">
+        <a href="#">
+            <i class="fa fa-long-arrow-up"></i>
+        </a>
+    </div>
+
+    <!-- Page Loader -->
+    <div id="page-preloader">
+        <div class="page-loading">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Vendor JS -->
+<script src="{% static 'main/libs/jquery/jquery.js' %}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+<script src="{% static 'main/libs/bootstrap/js/bootstrap.js' %}"></script>
+<script src="{% static 'main/libs/jquery.countdown/jquery.countdown.js' %}"></script>
+<script src="{% static 'main/libs/nivo-slider/js/jquery.nivo.slider.js' %}"></script>
+<script src="{% static 'main/libs/owl.carousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'main/libs/slider-range/js/tmpl.js' %}"></script>
+<script src="{% static 'main/libs/slider-range/js/jquery.dependClass-0.1.js' %}"></script>
+<script src="{% static 'main/libs/slider-range/js/draggable-0.1.js' %}"></script>
+<script src="{% static 'main/libs/slider-range/js/jquery.slider.js' %}"></script>
+<script src="{% static 'main/libs/elevatezoom/jquery.elevatezoom.js' %}"></script>
+{% block extra_js %}
 
 {% endblock %}
 
-{% include 'layouts/footer.html' %}
-
-
-
-{#			<!-- Newsletter Popup -->#}
-{#			<div class="newsletter-popup">#}
-{#				<div class="popup-wrap" id="newsletter-popup">#}
-{#					<div class="popup">#}
-{#						<a class="close" href="#"><i class="zmdi zmdi-hc-fw zmdi-close"></i></a>#}
-{##}
-{#						<h3 class="block-title">Newsletter</h3>#}
-{#						<p class="block-description">Sign up for newsletter to receive special offers and exclusive news about FreshMart products</p>#}
-{##}
-{#						<form action="#" method="post">#}
-{#							<input type="text" placeholder="Enter Your Email">#}
-{#							<button type="submit" class="btn btn-primary">Subscribe</button>#}
-{#						</form>#}
-{##}
-{#						<div class="checkbox">#}
-{#							<label><input type="checkbox"> Don’t show this popup again</label>#}
-{#						</div>#}
-{#					</div>#}
-{#				</div>#}
-{#			</div>#}
-
-			<!-- Go Up button -->
-			<div class="go-up">
-				<a href="#">
-					<i class="fa fa-long-arrow-up"></i>
-				</a>
-			</div>
-
-			<!-- Page Loader -->
-			<div id="page-preloader">
-				<div class="page-loading">
-					<div class="dot"></div>
-					<div class="dot"></div>
-					<div class="dot"></div>
-					<div class="dot"></div>
-					<div class="dot"></div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Vendor JS -->
-		<script src="{% static 'main/libs/jquery/jquery.js'%}"></script>
-		<script src="{% static 'main/libs/bootstrap/js/bootstrap.js'%}"></script>
-		<script src="{% static 'main/libs/jquery.countdown/jquery.countdown.js'%}"></script>
-		<script src="{% static 'main/libs/nivo-slider/js/jquery.nivo.slider.js'%}"></script>
-		<script src="{% static 'main/libs/owl.carousel/owl.carousel.min.js'%}"></script>
-		<script src="{% static 'main/libs/slider-range/js/tmpl.js'%}"></script>
-		<script src="{% static 'main/libs/slider-range/js/jquery.dependClass-0.1.js'%}"></script>
-		<script src="{% static 'main/libs/slider-range/js/draggable-0.1.js'%}"></script>
-		<script src="{% static 'main/libs/slider-range/js/jquery.slider.js'%}"></script>
-		<script src="{% static 'main/libs/elevatezoom/jquery.elevatezoom.js'%}"></script>
-        {% block extra_js %}
-
-        {% endblock %}
-
-					<!-- Template CSS -->
-		<script src="{% static 'main/js/main.js'%}"></script>
-    </body>
+<!-- Template CSS -->
+<script src="{% static 'main/js/main.js' %}"></script>
+</body>
 
 
 </html>

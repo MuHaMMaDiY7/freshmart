@@ -41,6 +41,7 @@ class ProductModel(models.Model):
     short_description = models.TextField()
     long_description = models.TextField()
     price = models.FloatField()
+    real_price = models.FloatField(default=0)
     discount = models.PositiveIntegerField(default=0)
     main_image = models.ImageField(upload_to='products/')
     tags = models.ManyToManyField(ProductTagModel, related_name='products')
@@ -48,10 +49,10 @@ class ProductModel(models.Model):
     category = models.ForeignKey(CategoryModel, on_delete=models.CASCADE, related_name='products')
     created_at = models.DateTimeField(auto_now_add=True)
 
-    def real_price(self):
-        if self.discount:
-            return self.price - (self.price * self.discount) / 100
-        return self.price
+    # def real_price(self):
+    #     if self.discount:
+    #         return self.price - (self.price * self.discount) / 100
+    #     return self.price
 
     def is_discount(self):
         return self.discount != 0
